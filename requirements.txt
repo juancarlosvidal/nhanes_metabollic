@@ -1,0 +1,4 @@
+torch==2.5.1
+numpy==2.2.5
+scikit-learn==1.7.2
+streamlit==1.57.0

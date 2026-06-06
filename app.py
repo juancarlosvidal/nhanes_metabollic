@@ -1,6 +1,3 @@
-import sys
-sys.path.append("..")
-
 import os
 import numpy as np
 import torch
@@ -38,7 +35,7 @@ COMBINATIONS = {
     'Comb 7 — Comb 4 + Cholesterol + Glucose + HbA1c (13 vars)':            ['RIDAGEYR', 'RIAGENDR', 'BMXHT', 'BMXWT', 'BMXBMI', 'BMXWAIST', 'BPXDI1', 'BPXSY1', 'BPXPLS', 'LBXSCH', 'LBXSTR', 'LBXGLU', 'LBXGH'],
 }
 
-MODELS_DIR = os.path.join(os.path.dirname(__file__), 'models')
+MODELS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'code', 'models')
 
 
 # ---------------------------------------------------------------------------
@@ -58,11 +55,6 @@ def load_bundle(comb_idx: int):
 # ---------------------------------------------------------------------------
 
 def build_feature_vector(comb: list, user_values: dict) -> np.ndarray:
-    """
-    Replicates the load_data pipeline for a single sample:
-    - continuous variables: raw float value (1 column each)
-    - RIAGENDR: one-hot encoded into 2 columns [is_male, is_female]
-    """
     cat_variables = ['RIAGENDR']
     parts = []
     for var in comb:
