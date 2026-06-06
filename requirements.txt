@@ -1,4 +1,6 @@
 torch
+torchmetrics
 numpy
+pandas
 scikit-learn
 streamlit
