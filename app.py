@@ -129,7 +129,7 @@ if st.button('Predict', type='primary', use_container_width=True):
 
     ci_result, _ = predictor.classify(test_data)
 
-    prob       = float(ci_result['p'][0])
+    prob       = float(ci_result['p'].ravel()[0])
     prediction = '🔴 Positive' if prob >= 0.5 else '🟢 Negative'
 
     st.subheader('Result')

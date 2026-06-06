@@ -73,7 +73,7 @@ class Predictor(object):
         correct_1, correct_2, correct_3, correct_4 = 0, 0, 0, 0
 
         # Normalize test weights and compute classifier scores
-        tw_4 = data4["w"] / np.sum(data4["w"])
+        tw_4 = (data4["w"] / np.sum(data4["w"])).ravel()
         empirical_quantile_4 = (1 - self._alpha) * (1 + 1 / data4["x"].shape[0])
         score_output_4 = (
             self._model_ce(torch.from_numpy(data4["x"]).to(device))
