@@ -1,0 +1,4 @@
+Model,Algorithm,AUC,Accuracy,Precision,Recall,F1,LogLoss,CV_AUC
+Model 4,Logistic Regression,0.9212,0.8543,0.7919,0.7085,0.7479,0.3341,0.9108
+Model 4,Random Forest,0.946,0.8819,0.8082,0.8036,0.8059,0.2723,0.9389
+Model 4,XGBoost,0.9491,0.8859,0.8096,0.8184,0.8139,0.2621,0.941
