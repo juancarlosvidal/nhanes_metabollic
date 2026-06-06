@@ -65,7 +65,7 @@ class Predictor(object):
             # Flip quantile output for negative-class samples
             indexes = np.where(data["y"] == 0)
             data4["y"][indexes] = 1 - data4["y"][indexes]
-            y = data["y"]
+            y = data["y"].ravel()
 
         patient_class = []
         condition_list = []
